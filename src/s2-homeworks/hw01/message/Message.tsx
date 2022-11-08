@@ -16,7 +16,7 @@ const Message = (props: MessagePropsType) => {
                 <img
                     id={'hw1-avatar-' + props.message.id}
                     // создаёт студент
-                    src="../avatar.png" alt={"photo"}
+                    src={props.message.user.avatar} alt={"photo"}
                     //
                 />
                 <hr/>
