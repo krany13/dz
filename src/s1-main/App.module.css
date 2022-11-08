@@ -1,0 +1,20 @@
+.App {
+    --header_height: 60px;
+}
+
+.hw {
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.hwTitle {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    height: 50px;
+    line-height: 27px;
+    margin-top: 50px;
+    padding-left: 215px;
+    padding-top: 15px;
+    margin-bottom: 34px;
+}
