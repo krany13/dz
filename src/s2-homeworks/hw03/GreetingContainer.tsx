@@ -5,12 +5,12 @@ import user from "../hw08/User";
 
 type GreetingContainerPropsType = {
     users: Array<UserType> // need to fix any
-    addUserCallback: (name: any) => void// need to fix any
+    addUserCallback: (name: string) => void// need to fix any
 }
 
 export const pureAddUser = (name: any, setError: any, setName: any, addUserCallback: any) => {
     if (name.trim() !== '') {
-        addUserCallback(user.name)
+        addUserCallback(name)
         setName('')
     } else {
         return setError('Ошибка! Введите имя!')
@@ -26,7 +26,7 @@ export const pureOnBlur = (name: any, setError: any) => {
 
 export const pureOnEnter = (e: any, addUser: any) => {
     if (e.key === "Enter") {
-        addUser(user)
+        addUser(user.name)
     }// если нажата кнопка Enter - добавить
 }
 
@@ -61,7 +61,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 
     const totalUsers = users.length // need to fix
     const lastUserName = totalUsers >0 ? users[users.length -1].name : ''// need to fix
-console.log( users[users.length -1])
+    console.log( users[users.length -1])
     return (
         <Greeting
             name={name}
