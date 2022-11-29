@@ -1,16 +1,21 @@
 .button {
+    color: purple;
 }
 
 .disabled {
+    color: grey;
 }
 
 .secondary {
+    color: green;
 }
 
 .default {
+    color: orange;
 }
 
 .red {
+    color: red;
 }
 
 .default:hover {
