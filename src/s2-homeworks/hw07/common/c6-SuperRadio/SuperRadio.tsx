@@ -35,7 +35,8 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
     ...restProps
 }) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        onChangeOption?.(e.currentTarget.value)
+        onChange?.(e)
+        onChangeOption?.(+e.currentTarget.value)
 
     }
 
@@ -49,7 +50,8 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                       id={id + '-input-' + o.id}
                       className={finalRadioClassName}
                       type={'radio'}
-                      checked={o.value === value}
+                      name={name}
+                      checked={o.id === value}
                       value={o.value}
 
                       onChange={onChangeCallback}
