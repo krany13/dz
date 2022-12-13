@@ -43,10 +43,11 @@ function Clock() {
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const newDate2 = new Date()
-    const dataView2 = `${newDate.getDay()}`
+    const dataView2 = `${newDate2.getDay()}:${newDate2.getUTCMonth()}`
     const stringDay = dataView2 || <br/> // пишут студенты
+    const a = new Intl.DateTimeFormat('en-US', { weekday: "long" }).format(date)
     const formatter = new Intl.DateTimeFormat('en-US', { month: 'long' });
-    const stringMonth = 'date->' + formatter.format(newDate) || <br/> // пишут студенты //PROBLEM!!!
+    const stringMonth = a+ formatter.format(newDate) || <br/> // пишут студенты //PROBLEM!!!
 
     console.log("TIMER_ID", timerId)
     return (
