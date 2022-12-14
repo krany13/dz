@@ -48,7 +48,7 @@ function Clock() {
     const stringDay = dataView2 || <br/> // пишут студенты
     const a = new Intl.DateTimeFormat('en-US', {weekday: "long"}).format(date)
     const formatter = new Intl.DateTimeFormat('en-US', {month: 'long'});
-    const stringMonth = a + formatter.format(newDate) || <br/> // пишут студенты //
+    const stringMonth = formatter.format(newDate) || <br/> // пишут студенты //
 
     console.log("TIMER_ID", timerId)
     return (
