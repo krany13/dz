@@ -42,12 +42,13 @@ function Clock() {
     const stringDate = new Date().toLocaleDateString() || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
+    // const dataView2 = `${newDate2.getDay()}:${newDate2.getUTCMonth()}`
     const newDate2 = new Date()
-    const dataView2 = `${newDate2.getDay()}:${newDate2.getUTCMonth()}`
+    const dataView2 = new Intl.DateTimeFormat('en-US', {weekday: "long"}).format(date)
     const stringDay = dataView2 || <br/> // пишут студенты
-    const a = new Intl.DateTimeFormat('en-US', { weekday: "long" }).format(date)
-    const formatter = new Intl.DateTimeFormat('en-US', { month: 'long' });
-    const stringMonth = a+ formatter.format(newDate) || <br/> // пишут студенты //PROBLEM!!!
+    const a = new Intl.DateTimeFormat('en-US', {weekday: "long"}).format(date)
+    const formatter = new Intl.DateTimeFormat('en-US', {month: 'long'});
+    const stringMonth = a + formatter.format(newDate) || <br/> // пишут студенты //
 
     console.log("TIMER_ID", timerId)
     return (
@@ -82,14 +83,14 @@ function Clock() {
             <div className={s.buttonsContainer}>
                 <SuperButton
                     id={'hw9-button-start'}
-                    disabled={show === true ? true : false} // пишут студенты // задизэйблить если таймер запущен
+                    disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
                     start
                 </SuperButton>
                 <SuperButton
                     id={'hw9-button-stop'}
-                    disabled={show === true ? true : false} // пишут студенты // задизэйблить если таймер не запущен
+                    disabled={!!timerId} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
