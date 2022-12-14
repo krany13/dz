@@ -39,7 +39,8 @@ function Clock() {
     const newDate = new Date()
     const dataView = `${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`
     const stringTime = dataView || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = new Date().toLocaleDateString() || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const dataYear = `${newDate.getDay()}/${newDate.getMonth()}/${newDate.getFullYear()}`
+    const stringDate = dataYear || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     // const dataView2 = `${newDate2.getDay()}:${newDate2.getUTCMonth()}`
